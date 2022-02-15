@@ -1,0 +1,49 @@
+.box{
+    height: 100px;
+    width: 100px;
+    border: 3px solid black;
+    background-color: yellow;
+    box-sizing: border-box;
+    /* In content-box, height and width are 100*100, and border is 2.4 px all the sides.  */
+    /* box-sizing: content-box is the default one  */
+
+    /* box-sizing: border-box;
+    In border-box --> 100px is total, that includes 2.4 border as well. 
+    So, content-size is of 95.2 with 2.4 left and right borders => 95.2 + 2.4 +2.4 = 100
+    */
+}
+
+/* FLEXBOX - IMPORTANT TO BUILD ONE-DIMENSIONAL LAYOUT
+IT AUTOMATICALLY DIVIDES THE SPACE INSIDE CONTAINER ELEMENT THAT THE CHILD ELEMENTS WILL NEED.
+
+*/
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.red{
+    background-color: red;
+}
+.yellowgreen{
+    background-color: yellowgreen;
+}
+.aqua{
+    background-color: aqua;
+}
+.pink{
+    background-color: pink;
+}
+.brown{
+    background-color: brown;
+}

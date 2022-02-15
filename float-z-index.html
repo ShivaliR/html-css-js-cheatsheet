@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .outer-circle{
+            height:200px;
+            width: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .inner-circle{
+            height:200px;
+            width:200px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            z-index: 9;
+            transform: translate(-50%);
+        }
+        .item{
+            background-color: black;
+            color: white;
+            padding: 5px 5px;
+            display: inline-block;
+        }
+        .item:nth-child(3){
+            float: inline-start;
+        }
+        .item:nth-child(4){
+            background-color: green;
+            border-radius: 50px;
+            padding: 5px 5px;
+            text-transform: uppercase;
+            float: right;
+            clear: both;
+        }
+        .container img{
+            float: inline-start;
+            border-radius: 50%;
+            width: 10%;
+            height: 10%;
+        }
+        .container p{
+            background-color: aqua;
+            border:3px solid black ;
+        }
+        .container span{
+            background-color: aquamarine;
+            border: 3px solid black;
+        }
+        p,span{
+            clear: both;
+        }
+        .square-box:nth-child(even){
+            background-color: red;
+            border: 3px solid black;
+            height: 50px;
+            width: 50px;
+        }
+        .square-box:nth-child(odd){
+            background-color: blue;
+            border: 3px solid black;
+            height: 50px;
+            width: 50px;
+        }
+        /* .one{
+            float: inline-end;
+        }
+        .two{
+            float: inline-end;
+        } */
+        .square-box{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-circle">
+        <div class="inner-circle"></div> 
+    </div>
+    <!-- FLOAT REMOVE ELEMENTS OUT OF NORMAL FLOW -->
+    <div class="float-item">
+        <div class="item">Item1</div>
+        <div class="item">Item2</div>
+        <div class="item">Item3</div>
+        <div class="item">Item4</div>
+    </div>
+<!-- FLOAT BRING THINGS UP IN THE AIR AND OTHER ELEMENTS GO UNDERNEATH IT, OTHER THAN TEXT -->
+    <div class="container">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ut quidem beatae necessitatibus consequuntur quas dolores, illum deleniti culpa atque aperiam possimus accusamus quod numquam aliquid! Optio, earum architecto ipsa numquam fuga reiciendis enim, voluptatum soluta quod modi non odio saepe provident hic asperiores nihil?</span>
+        <img src="https://images.unsplash.com/photo-1643998093886-a5772cdc308b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" srcset="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima et architecto debitis nemo, similique eum? Velit corrupti obcaecati, nostrum laborum necessitatibus porro architecto explicabo nihil exercitationem dolore ducimus natus quasi eveniet animi, optio rerum.</p>
+    </div>
+   <div class="box-container">
+    <div class="square-box one"></div>
+    <div class="square-box two"></div>
+    <div class="square-box three"></div>
+    <div class="square-box four"></div>
+    <div class="square-box five"></div>
+    <div class="square-box six"></div>
+    <div class="square-box seven"></div>
+    <div class="square-box eight"></div>
+   </div>
+   
+</body>
+</html>

@@ -1,0 +1,94 @@
+body{
+    border: 3px solid black;
+}
+#decorate-text{
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 3px;
+    color: gray;
+}
+.product_details{
+    text-transform: uppercase;
+}
+h1{
+    text-align: center;
+    background-color: rgb(233, 224, 224);
+}
+li:first-child{
+    font-weight: bold;
+}
+/* : indicates a pseudo class */
+li:last-child{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+li:nth-child(odd){
+    color: red;
+}
+li:nth-child(2){
+    color: midnightblue;
+}
+p{
+   color: red; 
+}
+article .para:first-child{
+    /* first-child not showing as expected 😢 */
+    background-color: aqua;
+    font-style: bold;
+}
+/* Styling Links -LVHA */
+a:link{
+    /* Selects those anchor tags which have "href" attribute */
+    color: rgb(245, 24, 24);
+    text-decoration: none;  
+    font-weight: bold;
+}
+a:visited{
+    /* Selects those anchor tags whose links were visited */
+    color: brown;
+}
+a:hover{
+    color: rgb(51, 51, 145);
+    text-decoration: underline dashed;
+}
+a:active{
+    background-color: yellow;
+    font-style: italic;
+}
+a:focus-visible{
+    background-color: pink;
+}
+
+/* User agent stylesheet in Dev tools - default css applied to elements */
+/* In case of conflicting css selectors and declarations
+Priority of selectors:
+1. Declarations marked: !important
+2. Inline style
+3. Highest priority - ID # selector
+4. Class(.) or pseudo class(:) selector
+5. Element selector (p, div, li etc.)
+6. Universal selector (*) - Lowest priority
+*/
+
+/* Inheritance of property from parent element and overriding the property in child element */
+/* All properties are not inherited, mostly which are related to text only gets inherited. */
+
+/*Color Codes -> RGBa, Hex code --> Maintain consistency with color code pattern*/
+
+/*CSS Box Model - Content, padding, border, margin - MBPC
+Fill Area - background image and color
+Margin is not a part of final element width and height calculation
+*/
+
+/*Every element should be seen as a css box model*/
+
+/* "%" is relative to parent element; Minimize the use of 'px'; use px when you have to corner elements*/
+.img-container img{
+    width: 50%;
+    height: auto;
+}
+.img-container{
+    /* margin-right: 50px; */
+    margin: 0 auto;
+    /* Also a good way to position elements */
+}

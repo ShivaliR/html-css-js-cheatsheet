@@ -1,0 +1,153 @@
+.container{
+    border: 4px solid black;
+}
+nav{
+    margin: 0;
+    background-color: rgb(245, 244, 244);
+    text-align: center;
+}
+.container img{
+    height: auto;
+    width: 25vw;
+}
+#price{
+    font-weight: 1000;
+}
+.muted-text{
+    text-transform: uppercase;
+    color: rgb(114, 111, 111);
+}
+/* Facing problem while centering elements */
+
+/* div{
+    background-color: red;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+div > div{
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+} */
+
+/*Block level elements and inline elements*/
+
+/* Types of boxes - content-box and border-box */
+div.elements > *{
+    border: 3px solid red;
+}
+.check-margin{
+    border: 3px solid red;
+}
+li{
+    display: inline-block;
+    /* IN INLINE, TOP-BOTTOM "MARGIN" CAN'T BE SET UP */
+    background-color: yellow;
+    margin: 15px;
+    border: 4px solid red;
+    padding: 5px 15px;
+}
+
+/*RELATIVE & ABSOLUTE POSITIONING
+RELATIVE POSITIONING - DEFAULT/NORMAL POSITIONING - ELEMENT IS IN FLOW. ELEMENTS ARE SIMPLY LAID DOWN IN ORDER ---> position: relative;
+ABSOLUTE POSITIONING - ELEMENT IS OUT OF FLOW - position:absolute; ELEMENT IS NO LONGER IN ORDER.
+IT CAN BE POSITIONED W.R.T. AN ELEMENT WHICH IS POSITIONED RELATIVE USING TOP, BOTTOM, LEFT, RIGHT PROPERTIES.
+*/
+.position-elements{
+    position: relative;
+    border: 3px solid blue;
+}
+.position-elements > *{
+    border: 3px solid green;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    right: 50px;
+}
+.outer-circle{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+}
+.inner-circle{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(75px,75px);
+    /* transform: translateY(75px); */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(50%, 50%); */
+}
+.circle-box{
+    border: 4px solid black;
+    display: inline-block;
+    background-color: yellow;
+}
+.box-one{
+    background-color: red;
+    border: 3px solid black;
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+.box-two{
+    background-color: blue;
+    border: 3px solid black;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 5px;
+    left: 45px;
+}
+.box-three{
+    background-color: yellow;
+    border: 3px solid black;
+    height:30px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    left: 45px;
+}
+
+/* PSEUDO ELEMENTS  */
+
+/* PSEUDO CLASSES(:) AND PSEUDO ELEMENTS(::) ARE DIFFERENT */
+.style-heading h1::first-letter{
+    color: red;
+    font-style: italic;
+}
+.style-heading h1::first-line{
+    color: blue;
+}
+.style-heading h1::after{
+    color:yellow;
+}
+h1 + p::first-line{
+    /* "+" here is JSON sibling selector */
+    /* This will select paragraph if it is immediately after h1  */
+    color: aqua;
+}
+h2::after{
+    content: "Hi Shivali";
+    background-color: green;
+    color: white;
+    font-weight: 100;
+    font-size: medium;
+}
+h2::before{
+    content: "Hi bad boy";
+    background-color: red;
+    color: black;
+    font-weight: 100;
+    font-size: medium;
+    padding: 5px 5px;
+}
+
+/* MOST USED PSEUDO ELEMENTS - ::after and ::before -> by default, all pesudo elements are inline elements */
+/* ::after --> use case while making badge */
