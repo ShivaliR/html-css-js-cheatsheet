@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex-box</title>
-    <link rel="stylesheet" href="./css-master/style-one.css">
-</head>
-<body>
+    <!-- <link rel="stylesheet" href="./css-master/style-one.css" /> -->
+    <!-- <script src="./js-master/concept-5.js"></script> -->
+  </head>
+  <style>
+    .container{
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .item{
+      padding: 10px 10px;
+    }
+    .item.one{
+      background-color: yellow;
+    }
+    .item.two{
+      background-color:green;
+      color: white;
+      order: -1;
+      flex: 1;
+      /* takes the remaining space of the parent element; shorthand for flex-grow, flex-shrink, flex-basis*/
+    }
+  </style>
+  <body>
+    <!-- <div class="container">
+      ABOVE ELEMENT IS 'FLEX CONTAINER'  -->
+      <!-- BELOW 8 ELEMENTS ARE 'FLEX-ITEMS' -->
+      <!-- <div class="el yellow">HTML</div>
+      <div class="el green">CSS</div>
+      <div class="el blue">JAVASCRIPT</div>
+      <div class="el red">JAVA</div>
+      <div class="el yellowgreen">PYTHON</div>
+      <div class="el black">C#</div>
+    </div> -->
     <div class="container">
-        <!-- ABOVE ELEMENT IS FLEX CONTAINER  -->
-        <!-- BELOW 8 ELEMENTS ARE FLEX-ITEMS  -->
-        <div class="el yellow">HTML</div>
-        <div class="el green">CSS</div>
-        <div class="el blue">JAVASCRIPT</div>
-        <div class="el red">JAVA</div>
-        <div class="el yellowgreen">PYTHON</div>
-        <div class="el aqua">C#</div>
-        <div class="el brown">C++</div>
-        <div class="el pink">DJANGO</div>
+      <div class="item one">Item 1</div>
+      <div class="item two">Item 2</div>
     </div>
-</body>
+  </body>
 </html>

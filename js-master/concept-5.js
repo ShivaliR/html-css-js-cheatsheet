@@ -3,9 +3,9 @@ const objectOne = {fName: 'Aditya', lname: 'Jain', designation: 'Project Manager
 // DEALING WITH OBJECTS 
 console.log(objectOne['designation']);
 console.log(objectOne.fName);
-// console.log("Object is: "+objectOne); Output not showing as expected 🤔
-// console.log(objectOne);😢
-
+console.log("Object is: ",objectOne); 
+console.log("Object is: "+objectOne); //COERCION --> CONVERTING A VALUE FROM ONE TYPE TO ANOTHER.
+console.log(objectOne.toString()); 
 //CONVERT WHOLE OBJECT INTO ARRAY
 const convertIntoArray = Object.entries(objectOne);
 console.log("After conversion into array, object becomes "+ typeof(convertIntoArray)); /*HERE, TYPE SHOULD BE ARRAY, BUT RESULT SHOWING AS OBJECT 😢 */

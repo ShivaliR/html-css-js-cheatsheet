@@ -1,49 +1,106 @@
-.box{
-    height: 100px;
-    width: 100px;
-    border: 3px solid black;
-    background-color: yellow;
-    box-sizing: border-box;
-    /* In content-box, height and width are 100*100, and border is 2.4 px all the sides.  */
-    /* box-sizing: content-box is the default one  */
+/* .box {
+  height: 100px;
+  width: 100px;
+  border: 3px solid black;
+  background-color: yellow;
+  box-sizing: border-box;
+  /* In content-box, height and width are 100*100, and border is 2.4 px all the sides.  */
+/* box-sizing: content-box is the default one  */
 
-    /* box-sizing: border-box;
+/* box-sizing: border-box;
     In border-box --> 100px is total, that includes 2.4 border as well. 
     So, content-size is of 95.2 with 2.4 left and right borders => 95.2 + 2.4 +2.4 = 100
     */
-}
+/* }  */
 
-/* FLEXBOX - IMPORTANT TO BUILD ONE-DIMENSIONAL LAYOUT
-IT AUTOMATICALLY DIVIDES THE SPACE INSIDE CONTAINER ELEMENT THAT THE CHILD ELEMENTS WILL NEED.
+/* FLEXBOX
+1. IMPORTANT TO BUILD ONE-DIMENSIONAL LAYOUT
+2. IT AUTOMATICALLY DIVIDES THE SPACE INSIDE CONTAINER ELEMENT THAT THE CHILD ELEMENTS WILL NEED.
+3. FLEXBOX IS V.IMP WHEN --> AUTO ALIGN ITEMS TO ONE ANOTHER, VERTICAL CENTERING, CREATING EQUAL HEIGHT COLUMNS
+4. PERFECT TO REPLACE FLOATS
 
+FLEX-CONTAINER --> CSS PROPERTY TO BE USED ARE: (1)gap: 0 {to create space between items, without using margin},
+(2)justify-content{to align items along main axis, horizontally by default, flex-start is the default one}, (3) align-items {to align items along cross-axis
+, by default vertically}, (4) flex-direction{to define which is the main axis} (5)flex-wrap {to allow items to wrap into a new
+line if they are too large} (6)align-content {only applies when there are multiple lines}.
+
+FLEX-ITEMS --> CSS PROPERTY TO BE USED FOR FLEX-ITEMS ARE: 
+order (by default order is 0 for all flex-items, if we want to place any between item at the start, give it order the least one 
+from orders of all elements)
+flex-grow --> default for flex-grow is 0; we generally use flex-grow:1;
+flex-shrink--> default for flex-grow is 1 --> whether flex-box is allwoed to shrink elements or not
+flex-basis --> default for flex-grow is auto 
+"The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing"
+flex (use this only, best practice)
+align-self
 */
-.container{
+.container {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+.yellow {
+  background-color: yellow;
+  width: 100px;
+  align-self: flex-start;
+  order: 5; 
+  /* flex-basis: 5px; */
+  /* largest order palced at ht eend of the row */
+}
+.green {
+  background-color: green;
+  order: -1;
+  /* flex-shrink: 0; */
+  /* flex-grow: 1; */
+}
+.blue {
+  background-color: blue;
+  align-self: stretch;
+  order: -5;
+  /* flex-grow: 2; */
+  flex: 2;
+}
+.red {
+  background-color: red;
+  order: -6;
+}
+.yellowgreen {
+  background-color: yellowgreen;
+  order: -7;
+}
+.aqua {
+  background-color: aqua;
+}
+.pink {
+  background-color: pink;
+}
+.brown {
+  background-color: brown;
+}
+.black {
+  background-color: black;
+  color: white;
+}
+/* div{
     display: flex;
+    gap: 50px;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-}
-.yellow{
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+} 
+span{
+    height: 50px;
+    width: 50px;
     background-color: yellow;
-}
-.green{
-    background-color: green;
-}
-.blue{
-    background-color: blue;
-}
-.red{
-    background-color: red;
-}
-.yellowgreen{
-    background-color: yellowgreen;
-}
-.aqua{
-    background-color: aqua;
-}
-.pink{
-    background-color: pink;
-}
-.brown{
-    background-color: brown;
-}
+} */
+/* body{
+    height: 100%;
+    width: 400;
+} */

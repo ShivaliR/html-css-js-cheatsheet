@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-widthdevice-width, initial-scale=1.0"
+    />
     <title>Toggle-CSS</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-direction: column;
+        height: 50vh;
+        width: 30vw;
+        background-color: #f1dde6;
+        border-radius: 50px 50px 50px 50px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .switch {
+        height: 30px;
+        width: 60px;
+        position: relative;
+      }
+      .switch input {
+        display: none;
+      }
+      .slider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #ccc;
+        border-radius: 50px;
+      }
+      h1 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: 400;
+      }
+      .slider::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left: 5px;
+        bottom: 5px;
+        background-color: white;
+        border-radius: 50px;
+      }
+      input:checked + .slider {
+        background-color: green;
+      }
+      input:checked + .slider:after {
+        content: "ON";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: rgb(201, 193, 193);
+        background-color: green;
+      }
+      input:checked + .slider::before {
+        transform: translate(30px);
+      }
+      p {
+        position: absolute;
+        left: -300%;
+        top: -40%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Toggles</h1>
+      <label class="switch">
+        <p>Enable Cookies:</p>
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <label class="switch">
+        <p>Share location:</p>
+        <input type="checkbox" checked />
+        <span class="slider"></span>
+      </label>
+      <label class="switch">
+        <p>Send Email Notifications:</p>
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </body>
 </html>
