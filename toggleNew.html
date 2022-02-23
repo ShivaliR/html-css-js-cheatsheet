@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-widthdevice-width, initial-scale=1.0"
+    />
+    <title>Toggle-CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-content: center;
+        gap: 40px;
+        height: 50vh;
+        width: 100vw;
+        background-color: #f1dde6;
+        border-radius: 50px 50px 50px 50px;
+        box-shadow: 0 0 15px #ccc;
+      }
+      .switch {
+        height: 30px;
+        width: 60px;
+        position: relative;
+        top: 10px;
+      }
+      .switch input {
+        display: none;
+      }
+      .slider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #ccc;
+        border-radius: 50px;
+      }
+      h1 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: underline;
+      }
+      .slider::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left: 5px;
+        bottom: 5px;
+        background-color: white;
+        border-radius: 50px;
+      }
+      input:checked + .slider {
+        background-color: green;
+      }
+      input:checked + .slider:after {
+        content: "ON";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        color: rgb(201, 193, 193); 
+        font-weight: 100;
+        font-size: small;
+      }
+      input:not(:checked) + .slider:after {
+        content: "OFF";
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        color: rgb(71, 69, 69);
+        font-weight: 100;
+        font-size: small;
+      }
+      input:checked + .slider::before {
+        transform: translate(30px);
+      }
+      p {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        align-self: baseline;
+      }
+      label {
+        box-shadow: 0 0 15px #333;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toggles</h1>
+    <div class="container">
+      <p>Enable Cookies:</p>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <p>Share location:</p>
+      <label class="switch">
+        <input type="checkbox" checked />
+        <span class="slider"></span>
+      </label>
+      <p>Send Email Notifications:</p>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </body>
+</html>

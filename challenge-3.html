@@ -16,14 +16,17 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-100%, -150%) rotate(45deg);
 
       }
       .skew-one{
         height: 100px;
         width: 100px;
-        background-color: yellow;
-        transform: translate(-100%) skew(-45deg);
+        background-color: green;
+        /* border: 3px solid black; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: skewX(45deg);
         /* IF ANGLE IS POSITIVE, THEN UPPER-LEFT AND BOTTOM-RIGHT ANGLES OF THE ELEMENTS ARE PULLED.
            IF ANGLE IS NEGATIVE, THEN UPPER-RIGHT AND BOTTOM-LEFT ANGLES OF THE ELEMENTS ARE PULLED.
            USE SKEWX() FOR THE HORIZONTAL EFFECT
@@ -65,13 +68,14 @@
       <div class="outer-circle"></div>
     </div> -->
 
-    <div class="semi-circle">
+    <!-- <div class="semi-circle">
       
-    </div>
+    </div> -->
 
     <div class="try-skew">
-        <div class="skew-one"></div>
     </div>
+    <div class="skew-one"></div>
+
   </body>
 </html>
 <!-- div.box#box$*4 -- short trick -->

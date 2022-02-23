@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box-shadow</title>
+    <style>
+      .card {
+        border: 3px solid red;
+        /* box-shadow: 60px -16px teal; */
+        /* X-OFFSET, Y-OFFSET, COLOR  */
+        /* +x-offset -> right; -x-offset-> left; -y-->top; and +ve y- bottom */
+
+        /* box-shadow:10px 5px 5px black; */
+        /* X-OFFSET, Y-OFFSET, BLUR-RADIUS, COLOR  */
+
+        /* box-shadow: 15px 10px 2px 4px green; */
+        /* X-OFFSET, Y-OFFSET, BLUR-RADIUS, SPREAD-RADIUS, COLOR  */
+
+        /* box-shadow: inset 5px 2px gold; */
+        /* "INSET"-OPTIONAL KEYWORD , CHANGES SHADOW TO ONE INSIDE THE FRAME  */
+
+        /* NOTE
+            1. % don't work in bpx-shadows 
+            2. Negative values are not accepted in blur-radius property
+            3. Spread radius --> basically spreads radius to that many pixels and then starts the blur & IT CAN TAKE NAGATIVE VALUE
+            4. Box-shadow color by default takes value of color of text
+            5. currentcolor property in box-shadow*/
+      }
+      .container {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .item {
+        border: 3px solid blue;
+        /*   box-shadow: 3px 3px yellow; */
+        /* box-shadow: 5px 10px 4px yellow, 5px 10px 4px red, 5px 10px 4px green; */
+        
+        /* box-shadow: 0 0 0 20px red,
+                    0 0 0 40px blue,
+                    0 0 0 60px yellow; */
+        
+        box-shadow: 0 40px 0 -20px red,
+                    0 80px 0 -40px  blue,
+                    0 120px 0 -60px yellow;
+      }
+
+      /* THREE HACKS FOR BOX-SHADOW
+      1.
+        */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="item-one">Item one</div>
+      <!-- <div class="item" id="item-two">Item two</div>
+      <div class="item" id="item-three">Item three</div> -->
+    </div>
+  </body>
+</html>

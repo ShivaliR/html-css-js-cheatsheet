@@ -57,6 +57,16 @@ console.log((counter===tryWithArray.length)?true:false);
 
 let str = 'Shivali';
 console.log(str.includes('S'));
-function myFunction(a, b) {
-    return a.indexOf(b) === -1 ? a + b : b + a
-  }
+
+var a;
+if(!a){
+    console.log('Something is there!')
+}
+
+function greet(name){
+    name = name||'<Your name here>';
+    console.log('Hello', name);
+}
+greet('Tony');
+greet();
+ 

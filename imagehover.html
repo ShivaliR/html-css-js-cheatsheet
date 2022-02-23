@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Image Zoomer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      /* body {
+        /* padding: 0 20px; 
+      }*/
+      .container {
+        width: 500px;
+        position: relative;
+      }
+      .image {
+        width: 100%;
+        height: auto;
+      }
+      /* ASPECT RATIO  */
+      .lens {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+      }
+      .result {
+        position: absolute;
+        transform: translate(140%);
+        top: 30px;
+        width: 500px;
+        height: 500px;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Zoom/Magnify Image on mouse hover</h1> -->
+    <div class="container">
+      <img class="image" src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+      <div class="lens"></div>
+      <div class="result"></div>
+    </div>
+  </body>
+</html>
