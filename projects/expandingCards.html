@@ -23,7 +23,7 @@
         border-radius: 100px;
         cursor: pointer;
         border: none;
-        transition: width 0.5s ease-in;
+        transition: width 0.7s ease-in;
         position: relative;
         padding: 10px 10px;
       }
@@ -35,7 +35,7 @@
         border: none;
         position: relative;
         padding: 10px 10px;
-        transition: width 0.5s ease-in;
+        transition: width 0.7s ease-in;
       }
       .active-image h3 {
         display: inline-block;
@@ -98,7 +98,7 @@
       <h3>Mountains - Clouds</h3>
     </div>
     <script>
-      var prevElement =  document.querySelector(".active-image");;
+      var prevElement =  document.querySelector(".active-image");
       document.addEventListener("click", function (e) {
         prevElement.classList.replace("active-image", "image");
         prevElement.querySelector("h3").style.display = "none";
