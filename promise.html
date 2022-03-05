@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      function myPromise() {
+        return new Promise(function (resolve, reject) {
+          // RETURNING A NEW PROMISE WHICH WILL BE EITHER RESOLVED OR REJECTED
+          console.log("Promise starts here");
+          setTimeout(() => {
+            const error = true;
+            if (!error) {
+              console.log("Promise is resolved");
+              resolve();
+            }
+            else{
+                console.log('Sorry, promise not fulfilled');
+                reject('Oops, error occured!');
+            }
+          }, 2000);
+        });
+      }
+      myPromise().then(()=>console.log('Yayyyay')) //if promise resolved, then take this
+      .catch(function(error){//if promise not resolved, take this
+        console.log('Sorry', error);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- NOTES:
+1. Promise will either be resolved / pending / rejected -->

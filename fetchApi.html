@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Student Details</h1>
+    <div class="container">
+      <button class="button" id="button-one">Your button</button>
+      <button class="button" id="button-two">Fetch Data</button>
+    </div>
+    <div id="content-box"></div>
+    <script>
+      let btn = document.getElementById("button-two");
+      let content = document.getElementById("content-box");
+      let url = "https://api.publicapis.org/entries";
+      // FETCH URL RETURNS PROMISE, THEREFORE .THEN() NEED TO BE USED
+
+      //------------------------------GET REQUEST--------------------------------------
+      function getData() {
+        console.log("entered into getData function");
+        //SYNTAX FOR FETCH API --> fetch is asynchronous --> line 24 to 33 goes to the queue.
+        fetch(url)
+          .then((response) => {
+            console.log("Inside first then");
+            return response.text();
+            //if want to return parsed response ==> return response.json();
+          }) //this also returns a promise
+          .then((data) => {
+            console.log("Inside second then");
+            console.log(data);
+          });
+      }
+      console.log("before running getData");
+      getData();
+      console.log("After running getData");
+
+      /*
+      To convert string to object --> response.json() --> if response is a string
+      To convert object to string --> JSON.stringify(response); --> if response is an object
+      response.text()
+      */
+
+      //--------------------------------------POST DATA------------------------------------------
+      function getData() {
+        let url = "https://jsonplaceholder.typicode.com/posts";
+        let data = {
+          id: 1,
+          title: "foo",
+          body: "bar",
+          userId: 1,
+        };
+        let params = {
+          method: "POST",
+          header: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data)
+        };
+        fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-Await</title>
+</head>
+<body>
+    <script>
+        function basicReturn(){
+            return "Shivali";
+        }
+        let returnVal = basicReturn();
+        // console.log(returnVal);
+
+        async function asynFun(){
+            return "Shivali";
+        }
+        let returnNewVal = asynFun();
+        // console.log(returnNewVal);
+        //RETURN OF PROMISE
+        // Prototype, PromiseState, PromiseResult
+
+        //async returns promise, and promises gets resolved
+
+        //---------------------------------------------------------------------------
+        async function myAsyncFunc(){
+            console.log("Inside myAsync Function");
+            const response = await fetch('https://api.github.com/users');//control returns back to normal flow
+            console.log("Before getting response");
+            const users = await response.json();
+            console.log("After getting response since promise got resolved");
+            return users;
+        }
+        console.log("Before entering myAsyncFunction");
+        let callAsyncFunc = myAsyncFunc();
+        console.log("After entering myAsyncFunction");
+        callAsyncFunc.then(users => console.log(users));
+        console.log("last line of my js file");
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        /* HACK TO CREATE TRIANGLE  */
+        height: 0;
+        width: 0;
+        box-sizing: border-box;
+        border: 50px solid red;
+        border-color: black transparent transparent transparent;
+        /* border-color: top right bottom left  */
+      }
+
+      span:nth-of-type(1) {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        position: fixed;
+        /* 1. RIGHT TRIANGLE  */
+        clip-path: polygon(50% 50%, 100% 100%, 50% 100%);
+        /* starting from top left corner -1st argument (considered as origin)  */
+        /* length percentage  */
+      }
+      span:nth-of-type(2) {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        /* 2. ISOSCELES TRIANGLE  */
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <span></span>
+    <span></span>
+  </body>
+</html>
