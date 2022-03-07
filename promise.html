@@ -8,30 +8,69 @@
   </head>
   <body>
     <script>
-      function myPromise() {
-        return new Promise(function (resolve, reject) {
-          // RETURNING A NEW PROMISE WHICH WILL BE EITHER RESOLVED OR REJECTED
-          console.log("Promise starts here");
-          setTimeout(() => {
-            const error = true;
-            if (!error) {
-              console.log("Promise is resolved");
-              resolve();
-            }
-            else{
-                console.log('Sorry, promise not fulfilled');
-                reject('Oops, error occured!');
-            }
-          }, 2000);
-        });
-      }
-      myPromise().then(()=>console.log('Yayyyay')) //if promise resolved, then take this
-      .catch(function(error){//if promise not resolved, take this
-        console.log('Sorry', error);
-      });
-    </script>
+      // function myPromise() {
+      //   return new Promise(function (resolve, reject) {
+      //     // RETURNING A NEW PROMISE WHICH WILL BE EITHER RESOLVED OR REJECTED
+      //     console.log("Promise starts here");
+      //     setTimeout(() => {
+      //       const error = true;
+      //       if (!error) {
+      //         console.log("Promise is resolved");
+      //         resolve();
+      //       }
+      //       else{
+      //           console.log('Sorry, promise not fulfilled');
+      //           reject('Oops, error occured!');
+      //       }
+      //     }, 2000);
+      //   });
+      // }
+      // myPromise().then(()=>console.log('Yayyyay')) //if promise resolved, then take this
+      // .catch(function(error){//if promise not resolved, take this
+      //   console.log('Sorry', error);
+      // });
+
+    //------------------1. USING PROMISE WITH FETCH---------------------------------------//
+    let apiUrl = 'https://api.github.com/users';
+      //----- USE THIS CODE WHENEVER YOU NEED TO FETCH API ASYNC ------------------------//
+    fetch(apiUrl)
+    .then((response)=>{return response.json()})
+    // .then((data)=>{console.log(data)})
+    .catch((err)=>{console.log(err)});
+
+  //------------------2. HOW TO MAKE YOUR PROMISE---------------------------------------//
+  setTimeout(()=>{sayHello()}, 2000);
+  function sayHello(){
+    //delay(2000).then(console.log("After then, I'm inside console!"))
+  }
+  function delay(time){
+      return new Promise((resolve, reject)=>{
+        console.log('I am inside promise')
+        if(isNaN(time)){
+          reject(new Error('Oops, Error occured!'));
+        }
+        else{
+          console.log('yayy promise resolved');
+          resolve('Promise resolved, hurray!');
+        }
+      })
+  }
+  //------------------3. Using promise.all()--------------------------------------------//
+  let apiUrlOne = `https://api.github.com/users`
+  let promises = [fetch(apiUrlOne), fetch(apiUrlOne), fetch(apiUrlOne)];
+  Promise.all(promises)
+  .then((response)=>{return response.json()})
+  .then((data)=>{console.log(data)})
+  .catch(err=>console.error(err));
+  </script>
   </body>
 </html>
 
 <!-- NOTES:
-1. Promise will either be resolved / pending / rejected -->
+1. Promise will either be resolved or fulfilled / pending / rejected 
+2. Use of 'promise' is to handle 'asynchronous things'.
+3. function w/o names are called anonymous functions.
+4. Promise is chainable; for using .then() with promise, the earlier should 'return' something.
+5. Who returns Promise -> fetch(), .json()
+6. ES6 - Promises
+-->
